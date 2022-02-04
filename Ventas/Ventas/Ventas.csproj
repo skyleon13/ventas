@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EC41AF8-E951-4251-98B1-3DE79E8B9305}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ventas</RootNamespace>
+    <AssemblyName>Ventas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\ClienteController.cs" />
+    <Compile Include="Controlador\ConfiguracionController.cs" />
+    <Compile Include="Controlador\ProductoController.cs" />
+    <Compile Include="Controlador\VentaController.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Configuracion.cs" />
+    <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ApiRest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Clientes\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Clientes\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Clientes\ListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Clientes\ListaClientes.Designer.cs">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Clientes\NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Clientes\NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productos\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productos\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productos\ListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productos\ListaProductos.Designer.cs">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productos\NuevoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productos\NuevoProducto.Designer.cs">
+      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\ListaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\ListaVentas.Designer.cs">
+      <DependentUpon>ListaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\NuevaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\NuevaVenta.Designer.cs">
+      <DependentUpon>NuevaVenta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vista\Clientes\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Clientes\ListaClientes.resx">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Clientes\NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productos\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productos\ListaProductos.resx">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productos\NuevoProducto.resx">
+      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\ListaVentas.resx">
+      <DependentUpon>ListaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\NuevaVenta.resx">
+      <DependentUpon>NuevaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\cancel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
