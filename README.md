@@ -33,3 +33,9 @@ Aplicacion para el sistema de ventas
 	- Descargamos y extraemos el archivo "Ejecutable.zip" que se encuenta en: https://github.com/skyleon13/ventas/tree/Desarrollo
 	- Abrimos el archivo Ventas.exe.config y en la etiqueta apiventas ponemos ip:puerto donde este corriendo el api (El que configuramos al levantarlo)
 	- Abrimos el archivo Ventas.exe y podemos utilizar las opciones del sistema.
+
+# Pasos para compilar y debug
+	- Ambos proyectos se deben abrir com Visual Studio 2019
+	- Se selecciona en la parte superior el modo "Debug"
+	- Se da click derecho en el nombre de la solucion y se elige la opcion "Compilar"
+	- Una vez terminado se pueden agregar breakpoints en cualquier parte del codigo y con F5 arranca el proyecto en modo debug
